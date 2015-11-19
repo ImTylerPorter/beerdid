@@ -7,12 +7,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header id="main_navigation" class="clearfix"> 
+    <%= link_to root_path, title: "Beerdid Logo" do %>
+      <%= image_tag 'logo.svg', alt: 'Beerdid Logo', class: "logo" %>
+    <% end %>
+      <nav class="nav-collapse">
+        <ul class="clearfix">
+          <% if admin_signed_in? %>
+            <li><%= link_to 'New Beer', new_beer_path %></li>
+            <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign In", new_admin_session_path %></li>
+          <% end %>
+        </ul>
+        </nav>  
+  </header>
 	<% if notice %>
 	   <p class="notice"><%= notice %></p>
 	<% elsif alert %>   
        <p class="alert"><%= alert %></p>
     <% end %> 
 	<%= yield %>
+
+  <script>
+      var nav = responsiveNav(".nav-collapse",{
+          jsClass: "js", // String: 'JS enabled' class which is added to  element
+
+      });
+  </script>
 
 </body>
 </html>

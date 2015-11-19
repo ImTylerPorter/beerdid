@@ -1,40 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Beers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Style</th>
-      <th>Abv</th>
-      <th>Ibu</th>
-      <th>Brewery</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="wrapper wrapper_padding clearfix">
+  <div class="homepage_content">
     <% @beers.each do |beer| %>
-      <tr>
-        <td><%= image_tag beer.image.url(:medium) %></td>
-        <td><%= beer.name %></td>
-        <td><%= beer.description %></td>
-        <td><%= beer.style %></td>
-        <td><%= beer.abv %></td>
-        <td><%= beer.ibu %></td>
-        <td><%= beer.brewery %></td>
-        <td><%= beer.location %></td>
-        <td><%= link_to 'Show', beer %></td>
-        <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
-        <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="beer">
+        <div class="beer_img">
+          <%= image_tag beer.image.url(:medium) %>
+        </div>
+        <div class="beer_content">
+          <div class="beer_name">
+            <h2><%= link_to beer.name, beer %></h2>
+          </div>
+          <div class="beer_info">
+            <p><strong>STYLE:</strong> <%= beer.style %></p>
+            <p><strong>BREWERY:</strong> <%= beer.brewery %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
+  </div>
+</div>
 <br>
 
-<%= link_to 'New Beer', new_beer_path %>
