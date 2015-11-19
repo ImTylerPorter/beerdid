@@ -11,7 +11,7 @@
         <p><strong>Brewery:</strong> <%= @beer.brewery %></p>
         <p><strong>Location:</strong> <%= @beer.location %></p>
         <p><strong>STYLE:</strong> <%= @beer.style %></p>
-        <p><strong>ABV:</strong> <%= @beer.abv %></p>
+        <p><strong>ABV:</strong> <%= number_to_percentage(@beer.abv, precision: 1) %></p>
         <p><strong>IBUL</strong> <%= @beer.ibu %></p>
         <%= link_to "WISHLIST", root_path, class: "button" %>
       </div>
