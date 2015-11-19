@@ -14,6 +14,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem "responsive-nav-rails"
+gem 'friendly_id', '~> 5.1'
 
 
 

@@ -53,10 +53,10 @@ class BeersController < ApplicationController
 
   private
     def set_beer
-      @beer = Beer.find(params[:id])
+      @beer = Beer.friendly.find(params[:id])
     end
 
     def beer_params
-      params.require(:beer).permit(:name, :description, :style, :abv, :ibu, :brewery, :location, :image)
+      params.require(:beer).permit(:name, :description, :style, :abv, :ibu, :brewery, :location, :image, :slug)
     end
 end
