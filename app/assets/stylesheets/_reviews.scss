@@ -1,0 +1,14 @@
+#reviews{
+	padding: 10% 0;
+	.review {
+		border-top: 1px solid;
+   		margin: 1em 0;
+   		padding: 2.5em 1em;	
+	}
+	.review:last-of-type {
+		border-bottom: 1px solid;
+	}
+	.review-btn {
+		display: block;
+	}
+}
