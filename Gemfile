@@ -16,6 +16,7 @@ gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem "responsive-nav-rails"
 gem 'friendly_id', '~> 5.1'
 gem 'searchkick', '~> 1.0', '>= 1.0.2'
+gem 'simple_form', '~> 3.2'
 
 
 
