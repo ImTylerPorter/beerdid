@@ -16,8 +16,12 @@
         <%= link_to "WISHLIST", root_path, class: "button" %>
       </div>
     </div> 
+    <% if admin_signed_in? %>
+      <div id="admin_links">
+        <%= link_to "Edit Beer", edit_beer_path(@beer) %>
+        <%= link_to "Delete Beer", beer_path(@beer), method: :delete, data: { confirm: "Are you sure?" } %> 
+      </div>  
+    <% end %>
   </div>
 </div>
 
-<%= link_to 'Edit', edit_beer_path(@beer) %> |
-<%= link_to 'Back', beers_path %>
