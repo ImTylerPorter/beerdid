@@ -1,4 +1,11 @@
 #beer_show {
+	.avg_rating{
+		font-style: italic;
+		.big{
+			font-size:2.2rem;
+			color: $highlight;
+		}
+	}
 	padding-top: 2rem;
 	.description {
 		width: 50%;
@@ -41,7 +48,7 @@
 				height: 200px;
 				overflow: hidden;
 				img {
-					width: 100%;
+					max-width: 100%;
 					border-radius: .3rem .3rem 0 0;
 				}
 			}
@@ -67,7 +74,7 @@
 		color: $dark;
 	}
 	img {
-		width: 100%;
+		max-width: 100%;
 		border-radius: .3rem;
 	}
 	.description {
