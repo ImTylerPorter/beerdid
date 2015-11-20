@@ -22,8 +22,12 @@
           </form> -->
 
         </li>
-        <% if admin_signed_in? %>
-          <li><%= link_to 'New Beer', new_beer_path %></li>
+        <% if admin_signed_in? && current_admin.try(:admin?) %>
+          <li><strong>ADMIN ACCOUNT</strong></li>
+          <li><%= link_to "New Beer", new_beer_path %></li>
+          <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
+
+        <% elsif admin_signed_in? %>
           <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign In", new_admin_session_path %></li>

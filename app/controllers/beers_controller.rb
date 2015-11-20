@@ -25,7 +25,11 @@ class BeersController < ApplicationController
   end
 
   def new
-    @beer = current_admin.beers.build
+    if  
+      @beer = current_admin.beers.build
+    else
+      redirect_to root_path
+      end
   end
 
   def edit

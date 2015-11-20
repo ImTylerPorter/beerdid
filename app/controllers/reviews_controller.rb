@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.save
         format.html { redirect_to @beer, notice: 'Review was successfully created.' }
+        format.js
       else
         format.html { render :new }
       end
@@ -28,6 +29,7 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.update(review_params)
         format.html { redirect_to beer_path notice: 'Review was successfully updated.' }
+
       else
         format.html { render :edit }
       end
@@ -37,7 +39,8 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     respond_to do |format|
-      format.html { redirect_to root, notice: 'Review was successfully destroyed.' }
+      format.html { redirect_to beer_path(@beer), notice: 'Review was successfully deleted :(.' }
+
     end
   end
 

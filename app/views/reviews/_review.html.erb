@@ -1,0 +1,22 @@
+<div id="reviews">
+      <%= link_to "Write a review", new_beer_review_path(@beer) %>
+
+      <div class="review_show">
+        <h1 class="review_title"><%= @beer.name%></h1>
+        <% if @reviews.blank? %>
+          <h3>No reviews just yet. Would you like to add the first?</h3>
+           <%= link_to "Write a review", new_beer_review_path(@beer), class: "button" %>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="review">
+              <div class="user_name"><%= review.admin.user_name%></div>
+              <div class="star-rating" data-score=<%= review.rating %> ></div>
+              <p><%= review.comment %>
+               <% if review.admin == current_admin %>
+                <%= link_to image_tag("star-half.png") ,beer_review_path(@beer, review), method: :delete, data: { confirm: "Are you sure?" }%>
+               <% end %> 
+            </div>
+          <% end %>
+        <% end %>   
+      </div>
+    </div>

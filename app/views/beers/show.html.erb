@@ -20,25 +20,10 @@
       </div>
     </div> 
 
-    <div class="reviews">
-      <%= link_to "Write a review", new_beer_review_path(@beer) %>
 
-      <div class="review_show">
-        <h1 class="review_title"><%= @beer.name%></h1>
-        <% if @reviews.blank? %>
-          <h3>No reviews just yet. Would you like to add the first?</h3>
-           <%= link_to "Write a review", new_beer_review_path(@beer), class: "button" %>
-        <% else %>
-          <% @reviews.each do |review| %>
-            <div class="review">
-              <div class="star-rating" data-score=<%= review.rating %> ></div>
-              <p><%= review.comment %>
-            </div>
-          <% end %>
-        <% end %>   
-      </div>
-    </div>
-    <% if admin_signed_in? %>
+    <%= render 'reviews/review' %>
+    
+    <% if admin_signed_in? && current_admin.try(:admin?) %>
       <div id="admin_links">
         <%= link_to "Edit Beer", edit_beer_path(@beer) %>
         <%= link_to "Delete Beer", beer_path(@beer), method: :delete, data: { confirm: "Are you sure?" } %> 
