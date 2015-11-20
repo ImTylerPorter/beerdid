@@ -4,4 +4,5 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :beers
+  has_many :reviews, dependent: :destroy
 end
