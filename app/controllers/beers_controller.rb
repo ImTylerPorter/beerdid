@@ -2,6 +2,13 @@ class BeersController < ApplicationController
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [:index, :show]
 
+  def search
+    if params[:search].present?
+      @beers = Beer.search(params[:search])
+    else
+      @beers = Beer.all
+    end
+  end
 
   def index
     @beers = Beer.all

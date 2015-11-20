@@ -8,11 +8,18 @@
     <nav class="nav-collapse">
       <ul class="clearfix">
         <li class="searching">    
-
-          <form class="search-box" role="search">
+          <%= form_tag search_beers_path, method: :get, class: "search-box", role: "search" do %> 
+            <p>
+              <%= text_field_tag :search, params[:search], id: "search" %>
+              <%= button_tag(type: "submit", class: "icon", id: "search") do %>
+                 <i class="fa fa-search"></i>
+              <% end %>
+            </p>
+            <% end %>
+<!--           <form class="search-box" role="search">
               <input type="search" id="search" placeholder="Search..." />
               <button class="icon"><i class="fa fa-search"></i></button>
-          </form>
+          </form> -->
 
         </li>
         <% if admin_signed_in? %>

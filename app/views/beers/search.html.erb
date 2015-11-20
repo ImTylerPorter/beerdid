@@ -1,0 +1,20 @@
+<div class="wrapper wrapper_padding clearfix">
+  <div class="homepage_content">
+    <% @beers.each do |beer| %>
+      <div class="beer">
+        <div class="beer_img">
+          <%= image_tag beer.image.url(:medium) %>
+        </div>
+        <div class="beer_content">
+          <div class="beer_name">
+            <h2><%= link_to beer.name, beer %></h2>
+          </div>
+          <div class="beer_info">
+            <p><strong>STYLE:</strong> <%= beer.style %></p>
+            <p><strong>BREWERY:</strong> <%= beer.brewery %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>  
