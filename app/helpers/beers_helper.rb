@@ -8,4 +8,5 @@ module BeersHelper
 	end
   end
 
+
 end

@@ -22,11 +22,25 @@
 		.nav-btn {
 			float: left;
 		    display: inline-block;
-		    margin: 0 .2em;
+		    margin: .3em .2em;
 		    font-size: .8rem;
 		    padding: 1em 2em;
 		    text-transform: uppercase;
 		    letter-spacing: 1px;
+		}
+		.fa-heart{
+			color: blue;
+			.red {
+				color: red;
+			}
+		}
+		.likes{
+			.heart {
+				float: right;
+    			img {
+    				width: 1.6rem;
+    			}
+			}
 		}
 	}
 	h1 {

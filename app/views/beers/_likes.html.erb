@@ -1,0 +1,8 @@
+<% if admin_signed_in? && current_admin.likes?(@beer) %>
+  <%= link_to image_tag("beer-full.svg"), beer_like_path(@beer), method: :delete, remote: true, class: 
+  "heart" %>
+<% else %>
+  <%= link_to image_tag("beer-empty.svg"), beer_like_path(@beer), method: :post, remote: true, class: 
+  "heart" %>
+<% end %>
+

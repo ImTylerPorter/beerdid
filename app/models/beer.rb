@@ -1,7 +1,7 @@
 class Beer < ActiveRecord::Base
 	belongs_to :admin
 	has_many :reviews
-
+	has_many :likes
 	searchkick
 
 	has_attached_file :image, styles: { medium: "600x400#" }

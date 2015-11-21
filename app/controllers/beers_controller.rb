@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  before_action :set_beer, only: [:show, :edit, :update, :destroy]
+  before_action :set_beer, only: [:show, :edit, :update, :destroy, :like]
   before_action :authenticate_admin!, except: [:index, :show]
 
   def search
@@ -68,6 +68,17 @@ class BeersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def like
+    if @beer.liked_by current_admin
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.js
+      end
+    end
+  end
+
+
 
   private
     def set_beer

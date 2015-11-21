@@ -11,6 +11,11 @@
       <% unless  @beer.id == Beer.last.id   %> 
         <%= link_to  'Next Beer', Beer.get_next_beer(@beer), class: "button nav-btn" %>
       <% end %>
+
+      <div class="likes">
+        <%= render partial: "likes" %>
+      </div> 
+
     </div>
     <hr>
     <div class="clearfix">
