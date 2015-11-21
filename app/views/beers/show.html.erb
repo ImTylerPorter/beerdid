@@ -1,9 +1,7 @@
 <div class="skinny_wrapper">
   <div id="beer_show">
     <h1><%= @beer.name %></h1>
-    <div class="avg_rating">
-      <p>We collectively agree that this beer is a solid <strong class="big"><%= @avg_review %></strong> / 5!</p>
-    </div>
+
     <hr>
     <div class="clearfix">
       <div class="description">
@@ -21,7 +19,6 @@
     </div> 
 
 
-    <%= render 'reviews/review' %>
     
     <% if admin_signed_in? && current_admin.try(:admin?) %>
       <div id="admin_links">
