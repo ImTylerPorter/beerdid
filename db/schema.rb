@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120210236) do
+ActiveRecord::Schema.define(version: 20151121171511) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20151120210236) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "slug"
+    t.string   "youtube_url"
   end
 
   add_index "beers", ["slug"], name: "index_beers_on_slug", unique: true

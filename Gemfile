@@ -18,8 +18,6 @@ gem 'friendly_id', '~> 5.1'
 gem 'searchkick', '~> 1.0', '>= 1.0.2'
 gem 'simple_form', '~> 3.2'
 
-
-
 gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

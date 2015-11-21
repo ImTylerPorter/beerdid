@@ -1,7 +1,9 @@
 <div class="skinny_wrapper">
   <div id="beer_show">
     <h1><%= @beer.name %></h1>
-
+    <div class="embed_youtube">
+     <%= embed(@beer.youtube_url) %>
+    </div>
     <hr>
     <div class="clearfix">
       <div class="description">
