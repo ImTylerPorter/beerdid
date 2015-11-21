@@ -4,6 +4,14 @@
     <div class="embed_youtube">
      <%= embed(@beer.youtube_url) %>
     </div>
+    <div class="vid_info clearfix">
+      <% unless  @beer.id == Beer.first.id   %>
+        <%= link_to 'Previous Beer', Beer.get_previous_beer(@beer), class: "button nav-btn"  %>
+      <% end %>
+      <% unless  @beer.id == Beer.last.id   %> 
+        <%= link_to  'Next Beer', Beer.get_next_beer(@beer), class: "button nav-btn" %>
+      <% end %>
+    </div>
     <hr>
     <div class="clearfix">
       <div class="description">

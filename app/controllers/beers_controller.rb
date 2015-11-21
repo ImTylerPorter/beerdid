@@ -11,7 +11,7 @@ class BeersController < ApplicationController
   end
 
   def index
-    @beers = Beer.all
+    @beers = Beer.order("created_at desc").paginate(page: params[:page], per_page: 9)
   end
 
   def show

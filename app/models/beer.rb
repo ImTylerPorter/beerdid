@@ -13,4 +13,13 @@ class Beer < ActiveRecord::Base
   	def should_generate_new_friendly_id?
 		slug.blank? || name_changed?
 	end
+
+	def self.get_previous_beer(current_beer)
+    	Beer.where("beers.id < ? ", current_beer.id).order('created_at asc').last
+    end
+
+	def self.get_next_beer(current_beer)
+        Beer.where("beers.id > ? ", current_beer.id).order('created_at asc').first
+    end
+
 end
