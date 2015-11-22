@@ -141,6 +141,7 @@ hr {
 		}
 	}
 	nav {
+
 		padding-top: 1.5rem;
 		overflow: visible;
 		@media (min-width: 769px){
@@ -151,6 +152,18 @@ hr {
 					text-decoration: none;
 					margin: 0 1rem;
 					font-size: 1rem;
+				}
+				img {
+					display: inline-block;
+				    height: 30px;
+				    width: 30px;
+				    vertical-align: middle;
+				    border-radius: 50%;
+				}
+				strong {
+					a {
+						margin: 0 1em 0 0;
+					}
 				}
 			}
 		}	

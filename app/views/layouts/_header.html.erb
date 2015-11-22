@@ -23,11 +23,16 @@
 
         </li>
         <% if admin_signed_in? && current_admin.try(:admin?) %>
-          <li><strong>ADMIN ACCOUNT</strong></li>
+          <li>
+              <%= image_tag current_admin.avatar_url, width: 30, class: "user_image" %>
+              <strong><%= link_to current_admin.user_name, edit_admin_registration_path(@admin) %></strong></li>
           <li><%= link_to "New Beer", new_beer_path %></li>
           <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
-
+          <li><strong>Admin</strong></li>
         <% elsif admin_signed_in? %>
+          <li>
+            <%= image_tag current_admin.avatar_url, width: 30, class: "user_image" %>
+            <%= link_to current_admin.user_name, edit_admin_registration_path(@admin) %></li>
           <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign In", new_admin_session_path %></li>
