@@ -1,0 +1,41 @@
+.edit_admin {
+	.col-half{
+		width: 50%;
+		float: left;
+	}
+	.field{
+		padding: 0 15px;
+		label {
+			font-weight: bold;
+			display: inline-block;
+			margin-bottom: .6em;
+		}
+		img{
+			vertical-align: middle;
+			border-radius: 50%;
+		}
+		.pull-left{
+			margin-bottom: 1em;
+
+			p {
+				vertical-align: middle;
+				margin-top: 1.4em;
+			}
+
+		}
+	}
+	.actions {
+		padding: 0 15px;
+		border-bottom: 1px solid $border;
+		padding-bottom:1em;
+	}
+	.muted-heading {
+		color: lighten($dark, 15%);
+		border-bottom: 1px solid $border;
+		padding-bottom:.5em;
+	}
+}
+.cancel {
+	color: lighten($dark, 20%);
+	margin-bottom: 0;
+}
