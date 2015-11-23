@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
   before_action :set_beer
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
-  before_action :set_admin
 
   def new
     @review = Review.new
@@ -54,9 +53,6 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
-    def set_admin
-      @admin = Admin.find(params:[:id])
-    end
 
     def review_params
       params.require(:review).permit(:rating, :comment)
