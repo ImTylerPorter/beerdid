@@ -1,7 +1,4 @@
 #beer_show {
-	@media screen and (max-width: 768px){
-		margin: 0 .5em;
-	}
 	.embed_youtube{
 		position: relative;
 		padding-bottom: 56.25%;
@@ -60,6 +57,10 @@
 	.description {
 		width: 50%;
 		float: left;
+		@media screen and (max-width: 768px) {
+			float: none;
+			width: 100%;
+		}
 	}
 	.beer_data {
  	   width: 40%;
@@ -68,6 +69,11 @@
  	   p {
  	   	margin-bottom: .6em;
  	   }
+ 	   @media screen and (max-width: 768px) {
+			float: none;
+			width: 100%;
+			margin: 0;
+		}
 		.button {
 			width: 100%;
 			display: inline-block;
