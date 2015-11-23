@@ -18,6 +18,7 @@ gem 'friendly_id', '~> 5.1'
 gem 'searchkick', '~> 1.0', '>= 1.0.2'
 gem 'simple_form', '~> 3.2'
 gem 'will_paginate', '~> 3.0', '>= 3.0.7'
+gem 'roadie', '~> 3.1'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
