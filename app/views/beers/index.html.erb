@@ -3,7 +3,7 @@
     <% @beers.each do |beer| %>
       <div class="beer">
         <div class="beer_img">
-          <%= image_tag beer.image.url(:medium) %>
+          <%= link_to (image_tag (beer.image.url(:medium))), beer %>
         </div>
         <div class="beer_content">
           <div class="beer_name">

@@ -1,4 +1,7 @@
 #beer_show {
+	@media screen and (max-width: 768px){
+		margin: 0 .5em;
+	}
 	.embed_youtube{
 		position: relative;
 		padding-bottom: 56.25%;
