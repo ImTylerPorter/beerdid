@@ -1,4 +1,4 @@
-.edit_admin {
+.edit_admin, .edit_beer {
 	.col-half{
 		width: 50%;
 		float: left;
@@ -28,6 +28,16 @@
 		padding: 0 15px;
 		border-bottom: 1px solid $border;
 		padding-bottom:1em;
+		.publish {
+			background: $highlight;
+			border: 1px solid $highlight;
+			color: $light;
+			&:hover {
+				background: $border;
+				border: none;
+				color: $dark;
+			}
+		}
 	}
 	.muted-heading {
 		color: lighten($dark, 15%);
