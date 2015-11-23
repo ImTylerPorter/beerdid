@@ -1,8 +1,7 @@
 <div id="reviews">
       <div class="review_show">
         <h1 class="review_title">Your Thoughts</h1>
-          <% @reviews.each do |review| %>
-          <% if review.admin != Admin.find(1) %>
+          <% @reviews.reject{|t| t.admin_id == 1 || t.admin_id == 2}.each do |review| %>
             <div class="review">
               <div class="star-rating" data-score=<%= review.rating %> ></div>
               <p><small>Reviewed <strong><%= time_ago_in_words(review.created_at) %> ago</strong> by <%= review.admin.user_name %></small></p>
@@ -11,7 +10,6 @@
                 <%= link_to image_tag("star-half.png") ,beer_review_path(@beer, review), method: :delete, data: { confirm: "Are you sure?" }%>
                <% end %> 
             </div>
-            <% end %>
           <% end %>
           <% if admin_signed_in? %>
             <%= simple_form_for [@beer, Review.new] do |f| %>
