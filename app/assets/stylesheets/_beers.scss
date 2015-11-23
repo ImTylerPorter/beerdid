@@ -129,6 +129,22 @@
 		line-height: 1.5;
 		color: $dark;
 	}
+	.review{
+		.our_thoughts{
+			.thoughts_title{
+				img {
+					border-radius: 50%;
+				}
+				.thoughts-heading {
+					padding-bottom: 1em;
+					margin-bottom: 0;
+				}
+				.star-rating{
+					margin-top: 2em;
+				}
+			}
+		}
+	}
 }
 
 #admin_links {

@@ -16,6 +16,7 @@ class BeersController < ApplicationController
 
   def show
     @reviews = Review.where(beer_id: @beer.id).order("created_at DESC")
+    @tyler = Admin.find(1)
 
     if @reviews.blank?
       @avg_review = 0

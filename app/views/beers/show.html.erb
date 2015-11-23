@@ -33,7 +33,26 @@
       </div>
     </div> 
 
+    <hr>
 
+    <% @reviews.each do |review| %>
+            <div class="review">
+              <% if review.admin == Admin.find(1) %>
+                <div class="our_thoughts">
+                  <%= image_tag @tyler.avatar_url %>
+                  <div class="thoughts_title clearfix">
+                    <h4 class="thoughts-heading pull-left"><%= @tyler.first_name %>'s Thoughts</h4>
+                    <div class="star-rating pull-right" data-score=<%= review.rating %> ></div>  
+                  </div> 
+                  <p><%= review.comment %>
+                  <%= link_to image_tag("star-half.png") ,beer_review_path(@beer, review), method: :delete, data: { confirm: "Are you sure?" }%>
+                </div>  
+              <% end %> 
+        
+            </div>
+    <% end %>
+
+     <%= render 'reviews/review' %>
     
     <% if admin_signed_in? && current_admin.try(:admin?) %>
       <div id="admin_links">
