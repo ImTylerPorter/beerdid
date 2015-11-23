@@ -46,7 +46,17 @@
                   </div> 
                   <p><%= review.comment %>
                   <%= link_to image_tag("star-half.png") ,beer_review_path(@beer, review), method: :delete, data: { confirm: "Are you sure?" }%>
-                </div>  
+                </div>
+                <%= elsif review.admin == Admin.find(3) %>  
+                  <div class="our_thoughts">
+                    <%= image_tag @josh.avatar_url %>
+                    <div class="thoughts_title clearfix">
+                      <h4 class="thoughts-heading pull-left"><%= @josh.first_name %>'s Thoughts</h4>
+                      <div class="star-rating pull-right" data-score=<%= review.rating %> ></div>  
+                    </div> 
+                    <p><%= review.comment %>
+                    <%= link_to image_tag("star-half.png") ,beer_review_path(@beer, review), method: :delete, data: { confirm: "Are you sure?" }%>
+                  </div>
               <% end %> 
         
             </div>
