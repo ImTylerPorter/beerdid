@@ -9,7 +9,7 @@
                   <%= link_to image_tag("delete.svg") ,beer_review_path(@beer, review), method: :delete, data: { confirm: "Are you sure?" }%>
                 <% end %>  
               </p>
-              <p><%= review.comment %> 
+              <p><%= markdown review.comment %> 
             </div>
           <% end %>
           <% if admin_signed_in? %>
