@@ -60,6 +60,7 @@ a {
 }
 @media (min-width: 769px){
 	.skinny_wrapper {
+		padding-top: 4em;
 		width: 80%;
 		max-width: 760px;
 		margin: 0 auto;
@@ -137,8 +138,15 @@ hr {
 		margin: 2rem 0;
 	}
 #main_navigation {
-	padding: 1.5em 5%;
+	padding: .5em 5%;
 	border-bottom: 1px solid $border;
+	background: white;	
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	@media (max-width: 768px) {
+		padding: 0 4%;
+	}
 	
 	@media (min-width: 769px){
 		.logo{
@@ -150,6 +158,9 @@ hr {
 		padding:1rem;
 		color: $dark;
 		width: 15rem;
+		@media (max-width: 660px) {
+			width: 10rem;
+		}
 	}
 	@media (max-width: 480px){
 		.name{
@@ -238,11 +249,12 @@ hr {
 	    user-select: none;
 	    border: 0;
 	    cursor: pointer;
-	    width: 2.5rem;
-	    height: 2.5rem;
+	    width: 2rem;
+	    height: 2rem;
 	    text-indent: -9999px;
 	 	background-image: image-url("hamburger.svg");
   		background-repeat: no-repeat;
+  		margin-top: 1em;
     }
     
 }
