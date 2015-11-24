@@ -146,7 +146,7 @@ hr {
 	width: 100%;
 	z-index: 999;
 	@media (max-width: 768px) {
-		padding: 0 4% 4% 4%;
+		padding: 0 4% 0 4%;
 	}
 	
 	@media (min-width: 769px){
@@ -202,12 +202,17 @@ hr {
 		}	
 	}
 }
+
+input, textarea, select {
+   -webkit-appearance: none;
+}
 /* ------------------------------------------
   NECESSARY STYLES FOR RESPONSIVE NAV
 --------------------------------------------- */
 
 @media (max-width: 768px) {
 .nav-collapse{
+	margin-bottom: 4em;
 	ul{
 		margin: 0 0 1rem 0;
  		padding: 0;
@@ -326,6 +331,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, input
 	margin-bottom:1em;
 	outline: 0;
 	box-shadow: none;
+	height: 3.3em;
 
 }
 
