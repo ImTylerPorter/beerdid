@@ -27,6 +27,17 @@
 		    padding: 1em 2em;
 		    text-transform: uppercase;
 		    letter-spacing: 1px;
+		    width: 25%;
+		    background: 25%;
+		    color: $dark;
+		    border: 2px solid $border;
+		    @media (max-width: 768px){
+		    	width: 42%;
+		    }
+		    &:hover{
+		    	border-color: $highlight;
+		    	color: $highlight;
+		    }
 		}
 		.fa-heart{
 			color: blue;
@@ -151,6 +162,9 @@
 				.star-rating{
 					margin-top: 2em;
 				}
+			}
+			a[data-method="delete"] img {
+			width: 1.3em;
 			}
 		}
 	}

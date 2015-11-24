@@ -5,7 +5,7 @@
     <%= devise_error_messages! %>
 
     <div class="field clearfix">
-      <%= f.label "Avatar" %><br />
+      <%= f.label "Avatar", class: "srt" %><br />
       <%= image_tag current_admin.avatar_url, class: "pull-left" %>
       <div class="pull-left" style="margin-left:1em;">
         <p>Visit <a href="http://en.gravatar.com/" target="_blank">Gravatar.com</a> to update your avatar.</p>
@@ -14,26 +14,26 @@
 
     <div class="col-half">
       <div class="field">
-        <%= f.label :first_name %><br />
-        <%= f.text_field :first_name %>
+        <%= f.label :first_name, class: "srt" %><br />
+        <%= f.text_field :first_name, placeholder: :first_name %>
       </div>    
     </div>
 
     <div class="col-half">
       <div class="field">
-        <%= f.label :last_name %><br />
-        <%= f.text_field :last_name %>
+        <%= f.label :last_name, class: "srt" %><br />
+        <%= f.text_field :last_name, placeholder: :last_name %>
       </div>    
     </div>
 
     <div class="field">
-      <%= f.label "Username" %><br />
-      <%= f.text_field :user_name, required: true %>
+      <%= f.label "Username", class: "srt" %><br />
+      <%= f.text_field :user_name, required: true, placeholder: "Username", autofocus: true  %>
     </div>
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.label :email, class: "srt" %><br />
+      <%= f.email_field :email, placeholder: :email %>
     </div>
 
     <h3 class="muted-heading">Change Your Password</h3>
@@ -41,20 +41,22 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
+    <div class="field"><small class="instructions"><i>*leave blank if you don't want to change it</i></small></div>
 
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.label :password, class: "srt" %> <br />
+      <%= f.password_field :password, autocomplete: "off", placeholder: :password %><br>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, class: "srt" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirm" %>
     </div>
 
+    <div class="field"><small><i class="instructions">*we need your current password to confirm your changes</i></small>
+</div>
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
+      <%= f.label :current_password, class: "srt" %> <br />
+      <%= f.password_field :current_password, autocomplete: "off", placeholder: :current_password %>
     </div>
 
     <div class="actions">

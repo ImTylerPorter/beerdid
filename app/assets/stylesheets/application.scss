@@ -41,6 +41,19 @@ a {
 	}
 
 }
+// Screen reader text
+
+.srt {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
 .wrapper{
 	width: 90%;
 	margin: 0 auto;
@@ -55,7 +68,7 @@ a {
 }
 @media (max-width: 768px) {
 	.skinny_wrapper{
-		margin: 0 .5em;
+		margin: 0 2em;
 	}
 }
 .super_skinny_wrapper {
@@ -281,43 +294,78 @@ hr {
 	}
 }
 
-input[type="text"], input[type="email"], input[type="password"], textarea{
+.field{
+	display: flex;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, input[type="number"]{
 	width: 100%;
 	max-width: 100%;
-	height: 3em;
+	height: 3rem;
 	border: 2px solid $border;
 	padding: 1em;
-	margin: .5em 0 2em 0;
+	margin-bottom:1em;
+	outline: 0;
+	box-shadow: none;
 
 }
+
 textarea {
 	min-height: 20em;
 }
 
+input[placeholder] {
+   font-weight: 400;
+   letter-spacing: 1px;
+}
+
+
+input::-webkit-input-placeholder {
+	text-transform: uppercase;
+}
+input::-moz-placeholder {
+	text-transform: uppercase;
+}
+input:-moz-placeholder {   /* Older versions of Firefox */
+	text-transform: uppercase;
+}
+input:-ms-input-placeholder { 
+	text-transform: uppercase;
+}
+
 input[type="submit"], .button {
 	outline: none;
-	background: transparent;
-	border: 2px solid $border;
+	display: inline-block;
+	background: $highlight;
+	border: 2px solid transparent;
 	text-align: center;
 	font-size: 1em;
-	color: $dark;
-	text-decoration: none;
+	color: $light;
 	padding: 1em 2em;
+	width: 100%;
+	font-weight: bold;
+	text-transform: uppercase;
 	&:hover {
 		border: 2px solid $highlight;
-		color: $highlight;
+		background: transparent;
+		color: $dark;
 	}
+}
+
+input[type="number"]{
+	height: 3.3em;
+}
+
+.link_row {
+	margin-top: 1em;
+}
+.instructions {
+	color: lighten($dark, 20%);
 }
 .button_wrapper {
 	margin: 4em 0;
 	text-align: center;
 
-}
-.project_button {
-	background: $highlight;
-	color: $white;
-	text-decoration: none;
-	padding: 1em 2em;
 }
 .email-fields {
 	text-align: center;
@@ -383,9 +431,10 @@ input[type="submit"], .button {
 		}
 	}
 }
-
-
-
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+  
 
 @import 'splash';
 @import 'home';

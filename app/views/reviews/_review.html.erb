@@ -4,11 +4,12 @@
           <% @reviews.reject{|t| t.admin_id == 1 || t.admin_id == 3}.each do |review| %>
             <div class="review">
               <div class="star-rating" data-score=<%= review.rating %> ></div>
-              <p><small>Reviewed <strong><%= time_ago_in_words(review.created_at) %> ago</strong> by <%= review.admin.user_name %></small></p>
-              <p><%= review.comment %>
-               <% if review.admin == current_admin %>
-                <%= link_to image_tag("star-half.png") ,beer_review_path(@beer, review), method: :delete, data: { confirm: "Are you sure?" }%>
-               <% end %> 
+              <p><small>Reviewed <strong><%= time_ago_in_words(review.created_at) %> ago</strong> by <%= review.admin.user_name %></small>
+                <% if review.admin == current_admin %>
+                  <%= link_to image_tag("delete.svg") ,beer_review_path(@beer, review), method: :delete, data: { confirm: "Are you sure?" }%>
+                <% end %>  
+              </p>
+              <p><%= review.comment %> 
             </div>
           <% end %>
           <% if admin_signed_in? %>
