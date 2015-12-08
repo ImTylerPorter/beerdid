@@ -7,6 +7,11 @@
    		p {
    			overflow: hidden;
    		}
+   		.star-rating {
+   			img {
+   				width: 1.9rem;
+   			}
+   		}
 	}
 	.review:last-of-type {
 		border-bottom: 1px solid;
@@ -17,5 +22,15 @@
 
 	a[data-method="delete"] img {
 		width: 1.3em;
+	}
+	form {
+		.field {
+			#star-rating {
+				margin: 1em 0;
+				img {
+					width: 1.9rem;
+				}
+			}
+		}
 	}
 }
