@@ -28,7 +28,19 @@
         <p><strong>Location:</strong> <%= @beer.location %></p>
         <p><strong>STYLE:</strong> <%= @beer.style %></p>
         <p><strong>ABV:</strong> <%= number_to_percentage(@beer.abv, precision: 1) %></p>
-        <p><strong>IBUL</strong> <%= @beer.ibu %></p>
+        <p><strong>IBU:</strong> <%= @beer.ibu %></p>
+        <p><strong>AVG RATING</strong> 
+          <% if @avg_review && @beer.rate_beer && @beer.beer_advocate %>
+           <%= (@avg_review + @beer.rate_beer + @beer.beer_advocate) / 3 %></p>
+          <% elsif @beer.rate_beer && @beer.beer_advocate %>
+            <%= (@beer.rate_beer + @beer.beer_advocate) / 2%>
+          <% elsif @beer.rate_beer %>
+            <%= @beer.rate_beer%>
+          <% elsif @beer.beer_advocate %>
+            <%= @beer.beer_advocate%> 
+          <% else %>
+            0   
+          <% end %>
       </div>
     </div> 
 

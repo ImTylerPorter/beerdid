@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122222334) do
+ActiveRecord::Schema.define(version: 20151208211741) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20151122222334) do
     t.datetime "image_updated_at"
     t.string   "slug"
     t.string   "youtube_url"
+    t.decimal  "rate_beer"
+    t.decimal  "beer_advocate"
   end
 
   add_index "beers", ["slug"], name: "index_beers_on_slug", unique: true

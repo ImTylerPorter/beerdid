@@ -47,11 +47,16 @@
 			}
 		}
 		.likes{
+			float: right;
 			.heart {
-				float: right;
     			img {
     				width: 1.6rem;
     			}
+			}
+			.like_count{
+				font-size: 1.4em;
+				color: lighten($dark, 20%);
+				text-align: center;
 			}
 		}
 	}

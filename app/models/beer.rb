@@ -22,4 +22,6 @@ class Beer < ActiveRecord::Base
         Beer.where("beers.id > ? ", current_beer.id).order('created_at asc').first
     end
 
+    
+
 end
