@@ -5,9 +5,7 @@ Rails.application.routes.draw do
     # page_view ':name', controller: :page_view, action: :show
 
 
-  resources :pages
-
-  # , path: '(.:format)', except: [:index, :new]
+  resources :pages, path: '(.:format)', except: [:index, :new]
  
 
   # %w[about privacy terms].each do |page|
@@ -23,6 +21,6 @@ Rails.application.routes.draw do
 		resource :like, module: :beers
 	end	
 
-	root 'beers#index'
+	root 'splash#home'
 
 end
