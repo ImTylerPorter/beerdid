@@ -23,14 +23,18 @@ class BeersController < ApplicationController
   end
 
   def new
-    if  
+    if current_admin.admin?
       @beer = current_admin.beers.build
     else
       redirect_to root_path
-      end
+    end
   end
 
   def edit
+    if current_admin.admin?
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -49,7 +53,7 @@ class BeersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @beer.update(beer_params)
+      if @beer.update(beer_params) 
         format.html { redirect_to @beer, notice: 'Beer was successfully updated.' }
         format.json { render :show, status: :ok, location: @beer }
       else
@@ -60,10 +64,14 @@ class BeersController < ApplicationController
   end
 
   def destroy
-    @beer.destroy
-    respond_to do |format|
-      format.html { redirect_to beers_url, notice: 'Beer was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_admin.admin?
+      @beer.destroy
+      respond_to do |format|
+        format.html { redirect_to beers_url, notice: 'Beer was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to root_path
     end
   end
 

@@ -6,6 +6,7 @@ class Admin < ActiveRecord::Base
   has_many :beers
   has_many :reviews, dependent: :destroy
   has_many :likes
+  has_many :pages
 
   def likes?(beer)
   	beer.likes.where(admin_id: id).any?
