@@ -1,5 +1,8 @@
 <footer>
 	<div class="wrapper wrapper_footer clearfix">
+		<div class="pull-left">
+			<div id="instafeed"></div>
+		</div>
 		<nav class="pull-right">
 			<ul>
 				<li><%= link_to "About", page_path("about") %></li>
@@ -17,5 +20,31 @@
   });
 </script>
 
+<script type="text/javascript">
+    var feed = new Instafeed({
+        clientId: '82d1d4f4904648b3a1828ff35f060521',
+        get: 'user',
+  		userId: '1716194',
+  		limit:"4",
+  		accessToken: '734d5fcc116541bab2a86a42fc5d731b'
+        template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>'
+    });
+    feed.run();
+</script>
+// <script>
+// 	var feed=new Instafeed({
+// 		get:"user",
+// 		userId:1716194,
+// 		accessToken:"1716194.467ede5.e9cd8c2b63c54895b2cdb4f04b706243",
+// 		clientId:"9e18754eafdf4c2097a1852712bb7526",
+// 		limit:"4",
+// 		link:"true",
+// 		template:'<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
+// 		resolution:"low_resolution",
+// 		after:function(){}});
+// 	$(document).ready(function(){
+// 		$("#mybutton").on("click",function(){
+// 			console.log(feed),feed.next()})}),feed.run();
+// </script>
 </body>
 </html>

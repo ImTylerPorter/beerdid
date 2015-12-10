@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require instafeed
 //= require responsive-nav
 //= require_tree .
