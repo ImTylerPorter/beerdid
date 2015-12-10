@@ -1,18 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'page_view/show', path: 'bob', controller: :page_view, action: :show
-
-    # page_view ':name', controller: :page_view, action: :show
-
-
-  resources :pages, path: '(.:format)', except: [:index, :new, :edit]
+  resources :pages, path: '', only: [:show]
  
 
   # %w[about privacy terms].each do |page|
   # 	get page, controller: "info", action: page
   # end
 
-  devise_for :admins, controllers: {registrations: 'registrations'}, :path => 'user', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :admins, controllers: {registrations: 'registrations'}, :path => 'profile', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => "signup"}
 	resources :beers do 
 		collection do 
 			get 'search'
