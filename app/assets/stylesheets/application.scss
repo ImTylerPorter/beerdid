@@ -203,9 +203,9 @@ hr {
 	}
 }
 
-input, textarea, select {
-   -webkit-appearance: none;
-}
+// input, textarea, select {
+//    -webkit-appearance: none;
+// }
 /* ------------------------------------------
   NECESSARY STYLES FOR RESPONSIVE NAV
 --------------------------------------------- */
@@ -334,7 +334,15 @@ input[type="text"], input[type="email"], input[type="password"], textarea, input
 	height: 3.3em;
 
 }
-
+button[disabled],
+html input[disabled]{
+	background: $border;
+	color: $dark;
+	&:hover{
+		background: $border;
+		border: 2px solid $border;
+	} 
+}
 textarea {
 	min-height: 20em;
 }

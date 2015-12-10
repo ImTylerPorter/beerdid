@@ -1,3 +1,9 @@
+.terms {
+	margin-left: .6em;
+}
+input[type="checkbox"] {
+	margin-top: .2em;
+}
 .edit_admin, .edit_beer {
 	.col-half{
 		width: 50%;
@@ -23,6 +29,7 @@
 			}
 
 		}
+
 	}
 	.actions {
 		padding: 0 15px;

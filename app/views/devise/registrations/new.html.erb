@@ -27,10 +27,32 @@
       <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: :password_confirmation %>
     </div>
 
+    <div class="field">
+      <%= f.check_box :terms %>
+      <%= link_to "Terms of Service", "http://www.beerdid.com/terms-of-service", class: "terms" %>
+    </div>
+    <br>
+
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign up", disabled: "disabled" %>
     </div>
   <% end %>
 
   <%= render "devise/shared/links" %>
 </div>
+
+<script>
+$( document ).ready(function() {
+  $('#admin_terms').click(function () {
+      //check if checkbox is checked
+      if ($(this).is(':checked')) {
+          
+          $('input[type="submit"]').removeAttr('disabled'); //enable input
+          
+      } else {
+          $('input[type="submit"]').attr('disabled', true); //disable input
+
+      }
+  });
+});
+</script>
