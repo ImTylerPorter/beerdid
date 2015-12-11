@@ -23,6 +23,7 @@ class Admin < ActiveRecord::Base
     admin.provider = auth.provider 
     admin.uid      = auth.uid
     admin.user_name     = auth.info.name
+    admin.email = auth.info.email
     admin.image = auth.info.image
     admin.save
   end
