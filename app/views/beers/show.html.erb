@@ -30,9 +30,9 @@
         <p><strong>IBU:</strong> <%= @beer.ibu %></p>
         <p><strong>AVG RATING</strong> 
           <% if @avg_review && @beer.rate_beer && @beer.beer_advocate %>
-           <%= (@avg_review + @beer.rate_beer + @beer.beer_advocate) / 3 %></p>
+           <%= ((@avg_review + @beer.rate_beer + @beer.beer_advocate) / 3).round(2) %></p>
           <% elsif @beer.rate_beer && @beer.beer_advocate %>
-            <%= (@beer.rate_beer + @beer.beer_advocate) / 2%>
+            <%= ((@beer.rate_beer + @beer.beer_advocate) / 2).round(2)%>
           <% elsif @beer.rate_beer %>
             <%= @beer.rate_beer%>
           <% elsif @beer.beer_advocate %>
