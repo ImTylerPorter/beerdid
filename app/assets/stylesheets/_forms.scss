@@ -19,6 +19,7 @@ input[type="checkbox"] {
 		img{
 			vertical-align: middle;
 			border-radius: 50%;
+			height: 80px;
 		}
 		.pull-left{
 			margin-bottom: 1em;
@@ -50,6 +51,32 @@ input[type="checkbox"] {
 		color: lighten($dark, 15%);
 		border-bottom: 1px solid $border;
 		padding-bottom:.5em;
+	}
+}
+
+form {
+	.fb-btn {
+		background: #4c66a4;
+	    padding: 1em;
+	    display: block;
+	    margin-bottom: 1em;
+	    text-align: center;
+	    font-size: 1.2em;
+	    color: white;
+	    line-height: 1.4;
+	    &:hover{
+	    	background: #3c5081;
+	    }
+		i {
+			font-size: 1.3em;
+		}
+		p{
+			margin-left: .2em;
+			display: inline;
+			font-size: 1.2em;
+			color: $white;
+			letter-spacing: 1px;
+		}
 	}
 }
 .cancel {

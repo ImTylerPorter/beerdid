@@ -6,10 +6,18 @@
 
     <div class="field clearfix">
       <%= f.label "Avatar", class: "srt" %><br />
-      <%= image_tag current_admin.avatar_url, class: "pull-left" %>
-      <div class="pull-left" style="margin-left:1em;">
-        <p>Visit <a href="http://en.gravatar.com/" target="_blank">Gravatar.com</a> to update your avatar.</p>
-      </div>
+      <% if current_admin.image.present? %>
+        <%= image_tag current_admin.image,  class: "pull-left" %>
+          <div class="pull-left" style="margin-left:1em;">
+          <p>Visit <a href="http://facebook.com/" target="_blank">Facebook.com</a> to update your profile image.</p>
+        </div>
+      <% else %>
+        <%= image_tag current_admin.avatar_url, class: "pull-left" %>
+        <div class="pull-left" style="margin-left:1em;">
+          <p>Visit <a href="http://en.gravatar.com/" target="_blank">Gravatar.com</a> to update your avatar.</p>
+        </div>
+      <% end %>  
+
     </div>
 
     <div class="col-half">
@@ -53,11 +61,13 @@
     </div>
 
     <div class="field"><small><i class="instructions">*we need your current password to confirm your changes</i></small>
-</div>
-    <div class="field">
-      <%= f.label :current_password, class: "srt" %> <br />
-      <%= f.password_field :current_password, autocomplete: "off", placeholder: :current_password %>
     </div>
+    <% if f.object.encrypted_password.present? %>
+      <div class="field">
+        <%= f.label :current_password, class: "srt" %> <br />
+        <%= f.password_field :current_password, autocomplete: "off", placeholder: :current_password %>
+      </div>
+    <% end %>
 
     <div class="actions">
       <%= f.submit "Update" %>

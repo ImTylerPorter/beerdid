@@ -24,14 +24,22 @@
         </li>
         <% if admin_signed_in? && current_admin.try(:admin?) %>
           <li>
-              <%= image_tag current_admin.avatar_url, width: 30, class: "user_image" %>
+              <% if current_admin.image.present? %>
+                <%= image_tag current_admin.image, width: 30, class: "user_image" %>
+              <% else %>
+                <%= image_tag current_admin.avatar_url, width: 30, class: "user_image" %>
+              <% end %>
               <strong><%= link_to current_admin.user_name, edit_admin_registration_path(@admin) %></strong></li>
           <li><%= link_to "New Beer", new_beer_path %></li>
           <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
           <li><i class="fa fa-beer"></i><li>
         <% elsif admin_signed_in? %>
           <li>
-            <%= image_tag current_admin.avatar_url, width: 30, class: "user_image" %>
+            <% if current_admin.image.present? %>
+              <%= image_tag current_admin.image, width: 30, class: "user_image" %>
+            <% else %>
+              <%= image_tag current_admin.avatar_url, width: 30, class: "user_image" %>
+            <% end %>
             <%= link_to current_admin.user_name, edit_admin_registration_path(@admin) %></li>
           <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
         <% else %>

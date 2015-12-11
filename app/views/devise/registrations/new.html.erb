@@ -1,9 +1,19 @@
 <div class="skinny_wrapper">
-  <h2>Create Account</h2>
-  <p>Enter your perfered username and email below.</p>
+  <h2 class="center">Signup</h2>
+  <p class="center">For a more enjoyable experience</p>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
+
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to omniauth_authorize_path(resource_name, provider), class: "fb-btn"  do%>
+        <i class="fa fa-facebook-official"></i>
+        <p>Signup with Facebook</p>
+      <% end %>
+  <% end -%>
+  <pre class="center">OR</pre>
+  <% end -%>
     <div class="field">
       <%= f.label :user_name, class: "srt" %><br />
       <%= f.text_field :user_name, required: true, placeholder: "Username", autofocus: true %>
@@ -15,17 +25,19 @@
       <%= f.email_field :email, placeholder: :email %>
     </div>
 
-    <div class="field">
-      <%= f.label :password, class: "srt" %>
-      <% if @minimum_password_length %>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off", placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
-    </div>
+    <% if f.object.password_required? %>
+      <div class="field">
+        <%= f.label :password, class: "srt" %>
+        <% if @minimum_password_length %>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation, class: "srt" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: :password_confirmation %>
-    </div>
+      <div class="field">
+        <%= f.label :password_confirmation, class: "srt" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: :password_confirmation %>
+      </div>
+    <% end %>
 
     <div class="field">
       <%= f.check_box :terms %>

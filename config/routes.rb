@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   # 	get page, controller: "info", action: page
   # end
 
-  devise_for :admins, controllers: {registrations: 'registrations'}, :path => 'profile', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => "signup"}
+  devise_for :admins, 
+  	controllers: {registrations: 'registrations', omniauth_callbacks: 'omniauth_callbacks'}, 
+  	:path => 'profile', 
+  	:path_names => {:sign_in => 'login', 
+  					:sign_out => 'logout', 
+  					:sign_up => "signup"}
 	resources :beers do 
 		collection do 
 			get 'search'
