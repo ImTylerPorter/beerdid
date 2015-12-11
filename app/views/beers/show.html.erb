@@ -28,17 +28,17 @@
         <p><strong>STYLE:</strong> <%= @beer.style %></p>
         <p><strong>ABV:</strong> <%= number_to_percentage(@beer.abv, precision: 1) %></p>
         <p><strong>IBU:</strong> <%= @beer.ibu %></p>
-        <p><strong>AVG RATING</strong> 
+        <p><strong>AVG RATING:</strong> 
           <% if @avg_review && @beer.rate_beer && @beer.beer_advocate %>
-           <%= ((@avg_review + @beer.rate_beer + @beer.beer_advocate) / 3).round(2) %></p>
+           <%= ((@avg_review + @beer.rate_beer + @beer.beer_advocate) / 3).round(2) %> / 5</p>
           <% elsif @beer.rate_beer && @beer.beer_advocate %>
-            <%= ((@beer.rate_beer + @beer.beer_advocate) / 2).round(2)%>
+            <%= ((@beer.rate_beer + @beer.beer_advocate) / 2).round(2) %> / 5</p>
           <% elsif @beer.rate_beer %>
-            <%= @beer.rate_beer%>
+            <%= @beer.rate_beer%> / 5</p>
           <% elsif @beer.beer_advocate %>
-            <%= @beer.beer_advocate%> 
+            <%= @beer.beer_advocate%> / 5 </p>
           <% else %>
-            0   
+            0 / 5</p>
           <% end %>
       </div>
     </div> 
