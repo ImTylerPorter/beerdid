@@ -7,8 +7,8 @@
 		.beer {
 			background: $light;
 			width: 30%;
-			float: left;
-			margin: 1rem 1.5%;
+			//float: left;  when more than one post
+			margin: 1rem auto; // 1.5% left-right when more than one post 
 			border: 1px solid $border;
 			border-radius: 0.3rem;
 			@media (max-width: 900px) {
