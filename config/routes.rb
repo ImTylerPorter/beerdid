@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :pages, path: '', only: [:show, :edit]
+  resources :pages
+  # , path: 'page', only: [:show, :edit]
  
 
   # %w[about privacy terms].each do |page|
