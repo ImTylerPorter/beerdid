@@ -2,6 +2,9 @@ footer {
 	border-top: 1px solid darken($border, 15%);
 	background: $border;
 	margin-top: 2em;
+	position: absolute;
+  	right: 0;
+  	left: 0;
 	.wrapper_footer {
 		padding: 2em 0;
 		.pull-left {
