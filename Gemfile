@@ -22,6 +22,7 @@ gem 'roadie', '~> 3.1'
 gem 'pygments.rb', '~> 0.6.3'
 gem 'redcarpet', '~> 3.3.3'
 gem 'omniauth-facebook'
+gem 'meta-tags'
 
 
 gem 'sdoc', '~> 0.4.0', group: :doc

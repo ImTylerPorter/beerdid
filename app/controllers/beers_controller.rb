@@ -12,11 +12,32 @@ class BeersController < ApplicationController
 
   def index
     @beers = Beer.order("created_at desc").paginate(page: params[:page], per_page: 9)
+        prepare_meta_tags title: "Beers", 
+              description: "Tasted beers by Beerdid",
+              og: {
+              title: "Beers",
+              description: "Tasted beers by Beerdid",
+            },
+              twitter: {
+              description: "Tasted beers by Beerdid"
+            }
   end
 
   def show
     @reviews = Review.where(beer_id: @beer.id).order("created_at DESC")
-
+    prepare_meta_tags(title: @beer.name,
+                      description: @beer.description.truncate(120),
+                      image: @beer.image.url(:original),
+                      og: {
+                          title: @beer.name,
+                          description: @beer.description.truncate(120),
+                          image: @beer.image.url(:original)
+                      },
+                      twitter: {
+                          description: @beer.description.truncate(120),
+                          image: @beer.image.url(:original)
+                      }
+            )
 
       @avg_review = @reviews.average(:rating)
     
@@ -84,6 +105,13 @@ class BeersController < ApplicationController
     end
   end
 
+  def sitemap
+      @beers = Beer.all
+      @pages = Page.all
+      respond_to do |format|
+          format.xml { render layout: false }
+      end
+  end
 
 
   private

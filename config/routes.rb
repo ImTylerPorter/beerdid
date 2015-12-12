@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :pages, path: '', only: [:show]
  
 
   # %w[about privacy terms].each do |page|
@@ -21,6 +20,10 @@ Rails.application.routes.draw do
 		resource :like, module: :beers
 	end	
 
+  get "sitemap" => "beers#sitemap"
+
 	root 'beers#index'
+  get '*path' => redirect('/')
+  resources :pages, path: '', only: [:show]
 
 end

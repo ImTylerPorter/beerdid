@@ -7,6 +7,16 @@ class PagesController < ApplicationController
   end
 
   def show
+    prepare_meta_tags(title: @page.name,
+                  description: @page.content.truncate(120),
+                  og: {
+                      title: @page.name,
+                      description: @page.content.truncate(120),
+                  },
+                  twitter: {
+                      description: @page.content.truncate(120),
+                  }
+        )
   end
 
   def new
