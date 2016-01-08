@@ -60,9 +60,9 @@
       <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirm" %>
     </div>
 
+    <% if f.object.encrypted_password.present? %>
     <div class="field"><small><i class="instructions">*we need your current password to confirm your changes</i></small>
     </div>
-    <% if f.object.encrypted_password.present? %>
       <div class="field">
         <%= f.label :current_password, class: "srt" %> <br />
         <%= f.password_field :current_password, autocomplete: "off", placeholder: :current_password %>
