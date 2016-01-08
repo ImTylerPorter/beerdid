@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get "sitemap" => "beers#sitemap"
 
 	root 'beers#index'
-  resources :pages
+  resources :pages, path: '', only: [:show]
   get '*path' => redirect('/')
 
 end
