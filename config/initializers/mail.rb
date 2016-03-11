@@ -1,9 +1,9 @@
 ActionMailer::Base.smtp_settings = {
-	address: "smtp.mandrillapp.com",
+	address: "smtp.mailgun.org",
 	port: 587,
 	enable_starttls_auto: true,
-	user_name: "hello@beerdid.me",
-	password: ENV["BEERDID_MANDRILL_API"],
+	user_name: "postmaster@beerdid.com",
+	password: ENV["MAILGUN_PASSWORD"],
 	authentication: "login"
 }
 
